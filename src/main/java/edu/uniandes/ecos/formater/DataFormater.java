@@ -3,8 +3,6 @@ package edu.uniandes.ecos.formater;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.uniandes.ecos.dto.ClassDto;
-
 /**
  * @author andresgarcias4n
  * @since 17/03/2017
@@ -12,7 +10,7 @@ import edu.uniandes.ecos.dto.ClassDto;
  */
 public class DataFormater {
 
-	List<ClassDto> classes;
+	String[] data;
 	
 	/**
 	 * Constructor
@@ -20,22 +18,17 @@ public class DataFormater {
 	 * @param inputData
 	 */
 	public DataFormater(String inputData){
-		classes = new ArrayList<ClassDto>();
-		String[] parts = inputData.split(" ");
-		for(String p : parts){
-			String[] classParts = p.split(",");
-			ClassDto classDto = new ClassDto(classParts[0],Integer.parseInt(classParts[1]),Integer.parseInt(classParts[2]));
-			classes.add(classDto);
-		}
+		data = inputData.split(",");
 	}
 
+
 	/**
-	 * obtener lista de clases
+	 * retorna los datos de entrada en un arreglo
 	 * 
-	 * @return the classes
+	 * @return data
 	 */
-	public List<ClassDto> getClasses() {
-		return classes;
+	public String[] getData() {
+		return data;
 	}
 	
 	

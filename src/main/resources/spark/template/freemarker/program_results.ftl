@@ -27,22 +27,14 @@ tr:nth-child(even) {
 
 <div class="container">
 
-<h1>Presentado por Andrés Felipe García Cifuentes</h1>
+<h1>Presentado por Andrï¿½s Felipe Garcï¿½a Cifuentes</h1>
 
 <table>
   <tr>
-    <th>VS</th>
-    <th>S</th>
-    <th>M</th>
-    <th>L</th>
-    <th>VL</th>
+    <th>Test Result</th>
   </tr>
   <tr>
-    <td>${VS}</td>
-    <td>${S}</td>
-    <td>${M}</td>
-    <td>${L}</td>
-    <td>${VL}</td>
+    <td>${result}</td>
   </tr>
 
 </div>
