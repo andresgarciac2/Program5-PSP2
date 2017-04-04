@@ -1,29 +1,25 @@
 package edu.uniandes.ecos.calculator;
 
-import java.math.BigInteger;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
  * @author andresgarcias4n
- * @since 17/03/2017
+ * @since 02/04/2017
  * @version 0.0.1
  */
 public class RangeCalculator {
 
 	/**
-	 * Calcula los rangos para los datos ingresados
+	 * Calcula la formula de simpson
 	 * 
 	 * @param classes
 	 * @return
 	 */
-	public static Map<String,String> calculateResults(int numSeg,double x,double dof){
+	public static double calculateSimpsonFormula(int numSeg,double x,double dof){
 		
-		Map<String,String> results = new HashMap<String,String>();
 		double result = 0;
 		double w = x/numSeg;
-		double e = 0.00001;
 		double part3 = 0;
 		
 		if (((dof+1)/2 == Math.floor((dof+1)/2)) && !Double.isInfinite((dof+1)/2)){
@@ -42,7 +38,26 @@ public class RangeCalculator {
 			else if((i & 1) == 0) result += (w/3)*function*2;
 			else result += (w/3)*function*4;
 		}
-		results.put("result", Double.toString(result));
+		return result;
+	}
+	
+	/**
+	 * Calcula los p
+	 * 
+	 * @param classes
+	 * @return
+	 */
+	public static  Map<String,String> calculateResults(int numSeg,double x,double dof){
+		double e = 0.00001;
+		Map<String,String> results = new HashMap<String,String>();
+		double val1 = calculateSimpsonFormula(numSeg, x, dof);
+		numSeg *= 2;
+		double val2 = calculateSimpsonFormula(numSeg, x, dof);
+		if(Math.abs(val1-val2)<e){
+			results.put("result", Double.toString(val2));
+		}else{
+			results = calculateResults(numSeg,x,dof);
+		}
 		return results;
 	}
 	

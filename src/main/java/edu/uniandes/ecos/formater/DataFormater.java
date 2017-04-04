@@ -1,11 +1,9 @@
 package edu.uniandes.ecos.formater;
 
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author andresgarcias4n
- * @since 17/03/2017
+ * @since 02/04/2017
  * @version 0.0.1
  */
 public class DataFormater {
