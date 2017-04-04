@@ -11,7 +11,7 @@ public class RangeCalculatorTest {
 	RangeCalculator rangeCalculator = new RangeCalculator();
 	
 	@Test
-	public void calculateRangeCalculatorTest1() {	 
+	public void calculateResultrTest1() {	 
 		Map<String,String> results = rangeCalculator.calculateResults(10,1.1,9);
 		assertTrue(results.get("result").equals("0.35005863689720107"));
 	}
